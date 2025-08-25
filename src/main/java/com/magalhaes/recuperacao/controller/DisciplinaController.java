@@ -45,4 +45,13 @@ public class DisciplinaController {
 
     return ResponseEntity.created(uri).body(disciplina);
     }
+
+    @DeleteMapping(value = "apagar/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        disciplinaRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    
 }
+
